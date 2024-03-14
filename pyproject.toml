@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "xyunionauthneo"
+version = "0.0.1"
+description = "一个用于提供身份验证与权限管理的微服务"
+authors = ["XYCode Kerman <xycode-xyc@outlook.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4"
+fastapi = {extras = ["full"], version = "^0.110.0"}
+python-dotenv = "^1.0.1"
+motor = "^3.3.2"
+uvicorn = "^0.28.0"
+casbin = "^1.36.0"
+casbin-redis-adapter = "^1.1.0"
+
+
+[[tool.poetry.source]]
+name = "mirrors"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+priority = "default"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
