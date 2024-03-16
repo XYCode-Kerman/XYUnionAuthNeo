@@ -5,3 +5,6 @@ from config import DATABASE_NAME, DATABASE_URL
 from utils.enforcer import enforcer
 
 db = AsyncIOMotorClient(DATABASE_URL)[DATABASE_NAME]
+usercol = db['user']
+resourcescol = db['resources']
+applicationcol = db['applications']
