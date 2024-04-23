@@ -6,7 +6,7 @@ from fastapi import APIRouter, Body, Depends, HTTPException
 
 from models import User
 from utils import db
-from utils.auth import gen_token, hash_password
+from utils.auth import gen_user_token, hash_password
 from utils.dependencies import require_permission, require_user
 
 router = APIRouter(prefix='/user', tags=['用户管理'])
@@ -47,7 +47,7 @@ async def login(username: Annotated[str, Body()], password: Annotated[str, Body(
         raise HTTPException(status_code=400, detail='密码错误')
 
     return {
-        'token': gen_token(user)
+        'token': gen_user_token(user)
     }
 
 
